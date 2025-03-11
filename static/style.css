@@ -8,9 +8,10 @@
 /* Top navigation bar styling */
 .topnav {
     display: flex;
-    justify-content: space-around; /* Ensures spacing */
+    justify-content: right; /* Ensures spacing */
     background-color: #333;
-    padding: 10px;
+    padding: 25px 50px 25px 50px;
+    gap: 50px;
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
@@ -19,6 +20,13 @@
     text-decoration: none;
     padding: 10px 15px;
     font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* hover effect */
+.topnav a:hover {
+    background-color: #555; /* Darker gray on hover */
+    border-radius: 5px; /* Slightly rounded corners */
 }
 
 /* Adjust navigation for smaller screens */
