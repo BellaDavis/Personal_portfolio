@@ -5,6 +5,15 @@
     padding: 0;
 }
 
+.contact {
+    display: flex;
+    justify-content: right; /* Ensures spacing */
+    background-color: #333;
+    padding: 25px 50px 25px 50px;
+    gap: 50px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
 /* Top navigation bar styling */
 .topnav {
     display: flex;
