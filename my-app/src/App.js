@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 {/*May need to tweek this - currently types out the nav items when the mouse hovers over the items. I may want to only do that when the page first is opened*/}
 const Navbar = () => {
-  const navLinks = ["Home", "About", "Projects", "Contact"];
+  const navLinks = ["About", "Projects", "Experience", "Contact"];
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [displayedText, setDisplayedText] = useState(navLinks.map(link => link));
   const typingIntervalRef = useRef(null);
@@ -59,10 +59,10 @@ const Navbar = () => {
 
   // Helper function to generate proper href for each link
   const getHref = (linkName) => {
-    if (linkName.toLowerCase() === "home") {
+    if (linkName.toLowerCase() === "about") {
       return "/"; // Home page is typically the root
     } else {
-      return `/${linkName.toLowerCase()}`; // Other pages get their lowercase name as path
+      return `#${linkName.toLowerCase()}`;
     }
   };
 
@@ -75,7 +75,7 @@ const Navbar = () => {
             onMouseEnter={() => handleMouseEnter(index)}
           >
             <a
-              href={getHref(name)}
+              href={`${getHref(name)}`}
               className={hoveredIndex === index ? "typing-effect" : ""}
             >
               {displayedText[index]}
@@ -90,34 +90,55 @@ const Navbar = () => {
 function App() {
     return (
         <div>
-            < Navbar />
+          < Navbar/>
 
-            {/*Background banner - want to add image*/}
-            <div className="banner">
+          <div className="app-container">
+            <div className="content">
+              <section id="about" className="section">about</section>
+              <section id="projects" className="section">projects</section>
+              <section id="experience" className="section">experience</section>
+              <section id="contact" className="section">contact</section>
             </div>
+          </div>
 
-            {/* About me page - picture of me and a summary*/}
-            <section className="section">
-                <div className="box-main">
-                    <div className="firsthalf">
-                        <h1 className="text-big" id="about">
-                            About Me!
-                        </h1>
-                        <p className="text-small">
-                            This is all about me
-                        </p>
+
+          {/*Background banner - want to add image*/}
+          {/*<div className="banner">
+            </div>*/}
+
+          {/* About me page - picture of me and a summary*/}
+
+          {/* Card Animation */}
+          {/*<div className="container">
+                <div className="card">
+                    <div className="slide slide1">
+                        <div className="content">
+                            <div className="icon">
+                                <i className="fa fa-user-circle" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="slide slide2">
+                        <div className="content">
+                            <h3>
+                                Hello There!
+                            </h3>
+                            <p>
+                                help
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>*/}
 
 
-            {/* This where the different information about me will be highlighted. */}
+          {/* This where the different information about me will be highlighted. */}
 
-            <footer className="footer">
-                <p className="text-footer">
-                    Bella Kamont
-                </p>
-            </footer>
+          <footer className="footer">
+            <p className="text-footer">
+              Bella Kamont
+            </p>
+          </footer>
         </div>
     );
 }
