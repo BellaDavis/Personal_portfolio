@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 {/*May need to tweek this - currently types out the nav items when the mouse hovers over the items. I may want to only do that when the page first is opened*/}
 const Navbar = () => {
-  const navLinks = ["About", "Projects", "Experience", "Contact"];
+  const navLinks = ["About", "Projects", "Experience"];
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [displayedText, setDisplayedText] = useState(navLinks.map(link => link));
   const typingIntervalRef = useRef(null);
@@ -45,7 +45,7 @@ const Navbar = () => {
         clearInterval(typingIntervalRef.current);
         isTypingRef.current = false; // Reset the typing flag when done
       }
-    }, 50); // Adjust speed here
+    }, 40); // Adjust speed here
   };
 
   // Reset all text when mouse leaves the navbar
@@ -67,42 +67,54 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar" onMouseLeave={handleMouseLeave}>
-      <ul className="nav-list">
-        {navLinks.map((name, index) => (
-          <li
-            key={index}
-            onMouseEnter={() => handleMouseEnter(index)}
-          >
-            <a
-              href={`${getHref(name)}`}
-              className={hoveredIndex === index ? "typing-effect" : ""}
-            >
-              {displayedText[index]}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+      <nav className="navbar" onMouseLeave={handleMouseLeave}>
+        <div className="logo-container">
+          <a href="/" className="Discord">
+            <img src="/1714463825421.png" alt="logo 1" className="logo" style={{ height: "40px" }}/>
+          </a>
+          <a href="/" className="LinkedIn">
+            <img src="/linkedin_logo.png" alt="logo 2" className="logo" style={{ height: "65px" }}/>
+          </a>
+          <a href="/" className="Gmail">
+            <img src="/Gmail_icon.png" alt="logo 3" className="logo" style={{ height: "33px" }} />
+          </a>
+        </div>
+
+        <ul className="nav-list">
+          {navLinks.map((name, index) => (
+              <li
+                  key={index}
+                  onMouseEnter={() => handleMouseEnter(index)}
+              >
+                <a
+                    href={`${getHref(name)}`}
+                    className={hoveredIndex === index ? "typing-effect" : ""}
+                >
+                  {displayedText[index]}
+                </a>
+              </li>
+          ))}
+        </ul>
+      </nav>
   );
 };
 
 function App() {
-    return (
-        <div>
-          < Navbar/>
+  return (
+      <div>
+        < Navbar/>
 
-          <div className="app-container">
-            <div className="content">
-              <section id="about" className="section">about</section>
-              <section id="projects" className="section">projects</section>
-              <section id="experience" className="section">experience</section>
-              <section id="contact" className="section">contact</section>
-            </div>
+        <div className="app-container">
+          <div className="content">
+            <section id="about" className="section">about</section>
+            <section id="skills" className="section">skills</section>
+            <section id="projects" className="section">projects</section>
+            <section id="experience" className="section">experience</section>
           </div>
+        </div>
 
 
-          {/*Background banner - want to add image*/}
+        {/*Background banner - want to add image*/}
           {/*<div className="banner">
             </div>*/}
 
