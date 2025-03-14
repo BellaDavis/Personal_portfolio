@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import "./App.css";
 import "./Navbar.css";
 
+{/*May want to add dark mode: https://oakharborwebdesigns.com/blog/how-to-add-dark-mode-to-your-website/*/}
 {/*May need to tweek this - currently types out the nav items when the mouse hovers over the items. I may want to only do that when the page first is opened*/}
 const Navbar = () => {
   const navLinks = ["About", "Projects", "Experience"];
@@ -69,13 +70,14 @@ const Navbar = () => {
   return (
       <nav className="navbar" onMouseLeave={handleMouseLeave}>
         <div className="logo-container">
-          <a href="/" className="Discord">
-            <img src="/1714463825421.png" alt="logo 1" className="logo" style={{ height: "40px" }}/>
+          <a href="" className="Discord">
+            <img src="/1714463825421.png" alt="logo 1" className="logo" style={{ height: "45px" }}/>
           </a>
-          <a href="/" className="LinkedIn">
-            <img src="/linkedin_logo.png" alt="logo 2" className="logo" style={{ height: "65px" }}/>
+          <a href="https://www.linkedin.com/in/bella-kamont/" className="LinkedIn">
+            <img src="/linkedin_logo.png" alt="logo 2" className="logo" style={{ height: "70px" }}/>
           </a>
-          <a href="/" className="Gmail">
+          {/* Directs the person to send an email*/}
+          <a href="mailto:kamontbella12@gmail.com?subject=Inquiry&body=Hello, I would like to know more about..." className="Gmail" >
             <img src="/Gmail_icon.png" alt="logo 3" className="logo" style={{ height: "33px" }} />
           </a>
         </div>
@@ -106,53 +108,65 @@ function App() {
 
         <div className="app-container">
           <div className="content">
-            <section id="about" className="section">about</section>
-            <section id="skills" className="section">skills</section>
-            <section id="projects" className="section">projects</section>
-            <section id="experience" className="section">experience</section>
+            <div id="about" className="section">
+              <div className="container">
+                <div className="card">
+                  <div className="slide slide1">
+                    <div className="content">
+                      <div className="icon">
+                        <i className="fa fa-user-circle" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="slide slide2">
+                    <div className="content">
+                      <h3>
+                        Hello There!
+                      </h3>
+                      <p>
+                        help
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* This would be good for some of the other sections: https://forfrontend.com/animated-css-cards*/}
+            <div id="skills" className="section">
+
+            </div>
+
+            <div id="projects" className="section">
+
+            </div>
+
+            <div id="experience" className="section">
+
+            </div>
           </div>
         </div>
 
 
         {/*Background banner - want to add image*/}
-          {/*<div className="banner">
+        {/*<div className="banner">
             </div>*/}
 
-          {/* About me page - picture of me and a summary*/}
+        {/* About me page - picture of me and a summary*/}
 
-          {/* Card Animation */}
-          {/*<div className="container">
-                <div className="card">
-                    <div className="slide slide1">
-                        <div className="content">
-                            <div className="icon">
-                                <i className="fa fa-user-circle" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slide slide2">
-                        <div className="content">
-                            <h3>
-                                Hello There!
-                            </h3>
-                            <p>
-                                help
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>*/}
+        {/* Card Animation */}
+        {/**/}
 
 
-          {/* This where the different information about me will be highlighted. */}
+        {/* This where the different information about me will be highlighted. */}
 
-          <footer className="footer">
-            <p className="text-footer">
-              Bella Kamont
-            </p>
-          </footer>
-        </div>
-    );
+        <footer className="footer">
+          <p className="text-footer">
+            Bella Kamont
+          </p>
+        </footer>
+      </div>
+  );
 }
 
 export default App;
