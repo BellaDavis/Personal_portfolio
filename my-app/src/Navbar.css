@@ -17,7 +17,7 @@
 .logo-container {
     display: flex; /* Ensures logos are side by side */
     align-items: center;
-    gap: 5px; /* Adjust spacing between logos */
+    gap: 15px; /* Adjust spacing between logos */
 }
 
 /* Individual logo styling */

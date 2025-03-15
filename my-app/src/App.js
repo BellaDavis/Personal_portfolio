@@ -12,6 +12,8 @@ const Navbar = () => {
   const typingIntervalRef = useRef(null);
   const isTypingRef = useRef(false);
 
+  {/*May want to look at editing the animation for when the screen gets smaller as the
+  typing animation doesn't work that well then*/}
   const handleMouseEnter = (index) => {
     // If already typing, don't start a new typing effect
     if (isTypingRef.current) {
@@ -68,17 +70,21 @@ const Navbar = () => {
   };
 
   return (
+
       <nav className="navbar" onMouseLeave={handleMouseLeave}>
+        <a className="contact">Contact:   </a>
         <div className="logo-container">
-          <a href="" className="Discord">
-            <img src="/1714463825421.png" alt="logo 1" className="logo" style={{ height: "45px" }}/>
+          <a href="" className="Github">
+            <div className="grid">
+              <img src="/github-logo.png" alt="logo 1" className="logo" style={{height: "30px"}}/>
+            </div>
           </a>
           <a href="https://www.linkedin.com/in/bella-kamont/" className="LinkedIn">
-            <img src="/linkedin_logo.png" alt="logo 2" className="logo" style={{ height: "70px" }}/>
+            <img src="/linkedin_logo.png" alt="logo 2" className="logo" style={{ height: "34px" }}/>
           </a>
           {/* Directs the person to send an email*/}
-          <a href="mailto:kamontbella12@gmail.com?subject=Inquiry&body=Hello, I would like to know more about..." className="Gmail" >
-            <img src="/Gmail_icon.png" alt="logo 3" className="logo" style={{ height: "33px" }} />
+          <a href="mailto:kamontbella12@gmail.com?subject=Inquiry&body=Hello Bella," className="Gmail" >
+            <img src="/Gmail_icon.png" alt="logo 3" className="logo" style={{ height: "25px" }} />
           </a>
         </div>
 
@@ -107,62 +113,57 @@ function App() {
         < Navbar/>
 
         <div className="app-container">
-          <div className="content">
-            <div id="about" className="section">
-              <div className="container">
-                <div className="card">
-                  <div className="slide slide1">
-                    <div className="content">
-                      <div className="icon">
-                        <i className="fa fa-user-circle" aria-hidden="true"></i>
-                      </div>
+            <div className="content">
+                <div id="about" className="section">
+                    <div className="about-content-wrapper">  {/* Add this wrapper */}
+                        <div className="about-container">
+                            <img src="/face_shot.jpg" alt="logo 1" className="profile-image"/>
+                        </div>
+                        <div className="write-up">
+                            <h1>Hello, I'm Bella!</h1>
+                            <p>
+                                Talk to IAM. They are the primary group for resetting Tech Account passwords, though the Windows Systems Admins might also reset password (typically when a bulk reset is required).
+
+    Contact IAM asking the following "Could you please reset my netid.tech password without the 'change before login' requirement?
+    After receiving the temporary password from IAM (without the 'change before login' requirement) you must use the steps below to change the password.
+
+Identity and Account Management can reset Tech Account passwords, but for other privileged accounts (.adm, .saa, .hsa, .dom, -cont), contact SAA.
+
+                            </p>
+                        </div>
                     </div>
-                  </div>
-                  <div className="slide slide2">
-                    <div className="content">
-                      <h3>
-                        Hello There!
-                      </h3>
-                      <p>
-                        help
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
+
+                {/* This would be good for some of the other sections: https://forfrontend.com/animated-css-cards*/}
+                <div id="skills" className="section">
+                </div>
+
+                <div id="projects" className="section">
+
+                </div>
+
+                <div id="experience" className="section">
+
+                </div>
             </div>
-
-            {/* This would be good for some of the other sections: https://forfrontend.com/animated-css-cards*/}
-            <div id="skills" className="section">
-
-            </div>
-
-            <div id="projects" className="section">
-
-            </div>
-
-            <div id="experience" className="section">
-
-            </div>
-          </div>
         </div>
 
 
-        {/*Background banner - want to add image*/}
-        {/*<div className="banner">
+          {/*Background banner - want to add image*/}
+          {/*<div className="banner">
             </div>*/}
 
-        {/* About me page - picture of me and a summary*/}
+          {/* About me page - picture of me and a summary*/}
 
-        {/* Card Animation */}
-        {/**/}
+          {/* Card Animation */}
+          {/**/}
 
 
-        {/* This where the different information about me will be highlighted. */}
+          {/* This where the different information about me will be highlighted. */}
 
-        <footer className="footer">
-          <p className="text-footer">
-            Bella Kamont
+          <footer className="footer">
+              <p className="text-footer">
+                  Bella Kamont
           </p>
         </footer>
       </div>

@@ -38,6 +38,12 @@ div.container{
     background-color: floralwhite;
 }
 
+p.text-footer {
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .firsthalf {
     display: flex;
     flex-direction: column;
@@ -179,49 +185,6 @@ div.container{
   color: rgba(255, 255, 255, 0.8);
 }
 
-
-/* card animation */
-
-.container {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    font-family: sans-serif;
-    background-color: lightblue;
-}
-
-.container .card {
-    background-color: lightblue;
-}
-
-.container .card .icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #2c73df;
-}
-
-.container .card .slide {
-    width: 800px;
-    height: 300px;
-    transition: 0.5s;
-}
-
-.container .card .slide.slide1 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    transition: .7s;
-    transform: translateY(300px);
-}
-
-
-
 html {
   scroll-behavior: smooth;
 }
@@ -237,14 +200,16 @@ html {
 }
 
 .section {
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
     text-align: center;
+    padding: 20px;
+    width: 100%;
+    height: auto;
 }
 
 /* Section Background Colors */
@@ -252,6 +217,84 @@ html {
 #skills { background: lightblue; color: white; }
 #projects { background: royalblue; color: white; }
 #experience { background: cornflowerblue; color: white; }
+
+
+/* Profile image animation */
+@keyframes slideIn {
+  0% {
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+    opacity: 1;
+  }
+}
+
+.about-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: lightblue;
+}
+
+.about-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    width: 30%
+}
+
+.write-up{
+    color: black;
+    width: 70%;
+    padding: 20px;
+    background-color: lightblue;
+}
+
+.write-up h1 {
+    font-family: "Courier New", monospace;
+    font-size: 60px;
+    font-weight: bolder;
+}
+.write-up p {
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    padding: 20px;
+    text-align: left;
+}
+
+.profile-image {
+    box-shadow: 2px 5px 10px lightslategray;
+    width: 25vw;
+    height: auto;
+    border-radius: 50%;
+    animation: slideIn 1s ease-out;
+    margin-left: 5%;
+    border: 10px hidden;
+}
+
+/* For changing the image size and position when the window gets smaller */
+@media (max-width: 768px) {
+  .about-content-wrapper {
+    flex-direction: column;
+  }
+  .about-container {
+    width: 100%;
+  }
+  .profile-image {
+      margin: 5%;
+      width: 100vw;
+      max-width: 250px;
+  }
+
+  .write-up{
+    width: 96%;
+      padding: 5%;
+  }
+}
 
 
 
