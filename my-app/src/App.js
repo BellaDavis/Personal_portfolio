@@ -122,13 +122,7 @@ function App() {
                         <div className="write-up">
                             <h1>Hello, I'm Bella!</h1>
                             <p>
-                                Talk to IAM. They are the primary group for resetting Tech Account passwords, though the Windows Systems Admins might also reset password (typically when a bulk reset is required).
-
-    Contact IAM asking the following "Could you please reset my netid.tech password without the 'change before login' requirement?
-    After receiving the temporary password from IAM (without the 'change before login' requirement) you must use the steps below to change the password.
-
-Identity and Account Management can reset Tech Account passwords, but for other privileged accounts (.adm, .saa, .hsa, .dom, -cont), contact SAA.
-
+                                Growing up as the oldest sibling in a single-parent household, I was the go-to tech support for my mother. Whether it was a stubborn printer, or a finicky router, I was always the one to come to the rescue. This early experience fostered my problem-solving skills and passion for troubleshooting technical challenges. However, it wasn’t until after I graduated high school that I became fascinated with the field of Computer Science. The summer before my freshman year at UVM, I stumbled across YouTube videos that introduced me to coding, and I was hooked. I switched from not knowing what I wanted to study, to a major in computer science. This switch turned out to be an amazing decision. Over the past three years of my studies, I have gained valuable knowledge, hands-on experience, and an amazing community of peers. Now, I am eager to take the next step in my professional career by applying my skills in a technical internship.
                             </p>
                         </div>
                     </div>

@@ -244,19 +244,21 @@ html {
     justify-content: center;
     align-items: center;
     background-color: lightblue;
-    width: 30%
+    width: 30%;
+    padding: 25px;
 }
 
 .write-up{
     color: black;
-    width: 70%;
-    padding: 20px;
+    width: 65%;
+    height: auto;
+    padding: 10px;
     background-color: lightblue;
 }
 
 .write-up h1 {
     font-family: "Courier New", monospace;
-    font-size: 60px;
+    font-size: 65px;
     font-weight: bolder;
 }
 .write-up p {
@@ -269,7 +271,6 @@ html {
 .profile-image {
     box-shadow: 2px 5px 10px lightslategray;
     width: 25vw;
-    height: auto;
     border-radius: 50%;
     animation: slideIn 1s ease-out;
     margin-left: 5%;
